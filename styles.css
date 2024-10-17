@@ -1,0 +1,499 @@
+/* General Body and Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Header Styling */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .logo img {
+    max-width: 120px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%; /* Rounded logo */
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: inline-block; /* Ensures the menu stays in the center */
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: #84a98c;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Introductory Message Section */
+  .intro-message {
+    background-color: #e0f5e8;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .intro-message h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .intro-message p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Product Listings Page - Styling */
+  .product-listing {
+    display: flex;
+    flex-wrap: wrap; /* Allows products to wrap to the next row */
+    justify-content: center; /* Centers the items in the middle */
+    padding: 20px;
+  }
+  
+  .product-item {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+  }
+  
+  .product-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-item p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Media queries for responsiveness */
+  
+  /* For larger screens, display two products per row */
+  @media (min-width: 601px) {
+    .product-item {
+      width: calc(50% - 40px); /* Each product item takes up half the space, minus margins */
+      margin: 20px;
+    }
+  }
+  
+  /* For mobile and smaller tablet screens, show one product per row */
+  @media (max-width: 600px) {
+    .product-item {
+      width: 100%; /* Full width for small screens */
+      margin: 20px 0; /* Adjust margin for single column layout */
+    }
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .intro-message h2 {
+      font-size: 1.7rem;
+    }
+  
+    .intro-message p {
+      font-size: 1rem;
+    }
+  }
+  
+  .cta-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .cta-button:hover {
+    background-color: #555;
+  }
+
+
+  /* Styling the Page Title Section for uniformity across all pages */
+.page-title {
+    background-color: #333; /* Same green as other pages */
+    color: #fff;
+    padding: 17px ;
+    text-align: center;
+  }
+  
+  .page-title h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  /* Styling for the main heading and intro section */
+  .about-intro {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .about-intro p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Centered Logo with Rounded Edges (Inside Content) */
+  .about-logo {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .about-logo img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%; /* Rounded edges for the logo */
+  }
+  
+  /* Bullet Points Section */
+  .about-points {
+    padding: 40px 20px;
+    background-color: #e0f5e8;
+    text-align: center;
+  }
+  
+  .about-points h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-points ul {
+    list-style-type: disc;
+    display: inline-block; /* This keeps the list centered */
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .about-points li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 600px) {
+    .page-title h1 {
+      font-size: 2rem;
+    }
+  
+    .about-intro p {
+      font-size: 1rem;
+    }
+  
+    .about-points h2 {
+      font-size: 1.7rem;
+    }
+  
+    .about-points li {
+      font-size: 1rem;
+    }
+  }
+  
+
+
+
+  /* New sections for Sustainability page */
+
+/* Section: Sustainability Practices */
+.sustainability-practices {
+    background-color: #e0f5e8;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .sustainability-practices h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .sustainability-practices p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+  
+  .practices-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .practice-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+  }
+  
+  .practice-item img {
+    max-width: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .practice-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .practice-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Section: Impact Highlights */
+  .impact-highlights {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .impact-highlights h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .impact-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .stat-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+  }
+  
+  .stat-item h3 {
+    font-size: 2.5rem;
+    color: #84a98c;
+    margin-bottom: 10px;
+  }
+  
+  .stat-item p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 800px) {
+    .practices-grid, .impact-stats {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .practice-item, .stat-item {
+      max-width: 100%;
+    }
+  }
+  
+
+
+
+  /* Contact Page Enhancements */
+
+/* Section: Contact Details */
+.contact-details {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  .contact-details h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .contact-details p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px;
+  }
+  
+  /* Contact Form Styling */
+  .contact-form {
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-form input[type="submit"]:hover {
+    background-color: #555;
+  }
+  
+  /* Additional Contact Info Section */
+  .contact-info {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info .social-links a {
+    font-size: 1.1rem;
+    color: #84a98c;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .contact-info .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Map Section */
+  .map-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .map-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .map-section iframe {
+    max-width: 100%;
+    border: 0;
+    margin-top: 15px;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 600px) {
+    .contact-details h2 {
+      font-size: 1.8rem;
+    }
+  
+    .contact-details p {
+      font-size: 1rem;
+    }
+  
+    .contact-info h3 {
+      font-size: 1.6rem;
+    }
+  
+    .map-section h3 {
+      font-size: 1.6rem;
+    }
+  }
+  
