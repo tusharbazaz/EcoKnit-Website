@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - EcoKnit</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAFAFA;
+      color: #333;
+    }
+
+    header {
+      background-color: #FF9933;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: inline-block;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cart {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .cart h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cart-items {
+      margin-bottom: 30px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .cart-item p {
+      font-size: 1.2rem;
+    }
+
+    .remove-button {
+      background-color: #FF3333;
+      color: #fff;
+      padding: 5px 10px;
+      text-decoration: none;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .remove-button:hover {
+      background-color: #FF6666;
+    }
+
+    .total {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    footer {
+      background-color: #333; /* Indian Blue */
+      color: #fff;
+      text-align: center;
+      padding: 7px;
+      font-size: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .cta-button {
+      background-color: #138808; /* Green for button */
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .cta-button:hover {
+      background-color: #FFB347;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Your Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="cart">
+    <h1>Your Cart</h1>
+    <div class="cart-items" id="cart-items"></div>
+    <p class="total">Total: ₹<span id="total-price">0</span></p>
+    <a href="checkout.html" class="cta-button">Proceed to Checkout</a>
+  </section>
+
+  <footer>
+    <p>© 2024 EcoKnit | Sustainable Fashion</p>
+  </footer>
+
+  <script>
+    // Function to display cart items
+    function displayCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let cartItemsDiv = document.getElementById('cart-items');
+      let totalPrice = 0;
+      cartItemsDiv.innerHTML = '';
+
+      // Check if cart is empty
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+        document.getElementById('total-price').textContent = '0';
+        return;
+      }
+
+      // Loop through cart items and display them
+      cart.forEach((item, index) => {
+        cartItemsDiv.innerHTML += `
+          <div class="cart-item">
+            <p>${item.name}</p>
+            <p>₹${item.price}</p>
+            <button class="remove-button" onclick="removeFromCart(${index})">Remove</button>
+          </div>`;
+        totalPrice += item.price;
+      });
+
+      document.getElementById('total-price').textContent = totalPrice;
+    }
+
+    // Function to remove item from cart
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1); // Remove the item at the specified index
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart(); // Update the cart display
+    }
+
+    // Load cart when the page loads
+    window.onload = displayCart;
+  </script>
+</body>
+</html>

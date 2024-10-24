@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Mask - EcoKnit</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAFAFA;
+      color: #333;
+    }
+
+    header {
+      background-color: #FF9933; /* Saffron color */
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: inline-block;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .product-detail {
+      display: flex;
+      align-items: flex-start;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #FFFFFF; /* Clean white background */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .product-detail img {
+      max-width: 400px; /* Larger image for full-screen usage */
+      margin-right: 40px; /* Spacing between image and text */
+      border-radius: 8px;
+    }
+
+    .product-info {
+      max-width: 600px; /* Adjusted for better full-screen usage */
+    }
+
+    .product-info h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .product-info p {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .product-info p.bold {
+      font-weight: bold;
+      color: #FF9933; /* Saffron for emphasis */
+    }
+
+    .cta-button {
+      background-color: #138808; /* Green for CTA button */
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .cta-button:hover {
+      background-color: #FFB347; /* Brighter hover effect */
+    }
+
+    footer {
+      background-color: #000080; /* Indian Blue */
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    /* Responsive design to ensure the layout adjusts well for mobile and tablets */
+    @media (max-width: 768px) {
+      .product-detail {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .product-detail img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .product-info {
+        max-width: 100%;
+      }
+
+      .product-info h1 {
+        font-size: 2rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Your Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="product-detail">
+    <img src="images/_5_sustainable_mask.jpg" alt="Sustainable Mask">
+    
+    <div class="product-info">
+      <h1>Sustainable Dress</h1>
+      <p>Price: ₹1250</p>
+      <p>Reusable and made from recycled materials, this mask is a perfect eco-friendly choice.</p>
+      <p class="bold">65% off for Premium Buyers</p>
+      <p class="bold">55% Reduction in Carbon emissions through sustainable fabric choices.</p>
+      <a href="#" class="cta-button" onclick="addToCart('Sustainable Dress', 1250)">Add to Cart</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 EcoKnit | Sustainable Fashion</p>
+  </footer>
+  <script>
+    function addToCart(itemName, itemPrice) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: itemName, price: itemPrice });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(itemName + " has been added to your cart!");
+    }
+  </script>
+
+</body>
+</html>
