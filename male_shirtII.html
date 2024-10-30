@@ -131,67 +131,67 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="cart.html">Your Cart</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="product-detail">
-    <img src="images/_2_male_shirt.png" alt="Male Shirt">
-    
-    <div class="product-info">
-      <h1>Male Shirt</h1>
-      <p id="price">Price: ₹700</p>
-      <p>A stylish shirt made from bamboo fibers, perfect for casual or office wear.</p>
-      <p class="bold">50% off for Premium Buyers</p>
-      <p class="bold">50% Reduction in Carbon emissions through sustainable fabric choices.</p>
-
-      <!-- Discount Checkbox -->
-      <label>
-        <input type="checkbox" id="discountCheckbox" onclick="applyDiscount()">
-        Apply 50% Discount for Premium Buyers
-      </label>
-
-      <a href="#" class="cta-button" onclick="addToCart('Male Shirt', getCurrentPrice())">Add to Cart</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2024 EcoKnit | Sustainable Fashion</p>
-  </footer>
-
-  <script>
-    let originalPrice = 700;
-
-    function applyDiscount() {
-      const discountCheckbox = document.getElementById("discountCheckbox");
-      const priceElement = document.getElementById("price");
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Your Cart</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <section class="product-detail">
+      <img src="images/_12_men12.png" alt="Male Shirt">
       
-      if (discountCheckbox.checked) {
-        let discountedPrice = originalPrice * 0.5;
-        priceElement.textContent = `Price: ₹${discountedPrice.toFixed(2)}`;
-      } else {
-        priceElement.textContent = `Price: ₹${originalPrice}`;
+      <div class="product-info">
+        <h1>Male Shirt - II</h1>
+        <p id="price">Price: ₹700</p>
+        <p>A stylish shirt made from bamboo fibers, perfect for casual or office wear.</p>
+        <p class="bold">50% off for Premium Buyers</p>
+        <p class="bold">50% Reduction in Carbon emissions through sustainable fabric choices.</p>
+  
+        <!-- Discount Checkbox -->
+        <label>
+          <input type="checkbox" id="discountCheckbox" onclick="applyDiscount()">
+          Apply 50% Discount for Premium Buyers
+        </label>
+  
+        <a href="#" class="cta-button" onclick="addToCart('Male Shirt - II', getCurrentPrice())">Add to Cart</a>
+      </div>
+    </section>
+  
+    <footer>
+      <p>© 2024 EcoKnit | Sustainable Fashion</p>
+    </footer>
+  
+    <script>
+      let originalPrice = 700;
+  
+      function applyDiscount() {
+        const discountCheckbox = document.getElementById("discountCheckbox");
+        const priceElement = document.getElementById("price");
+        
+        if (discountCheckbox.checked) {
+          let discountedPrice = originalPrice * 0.5;
+          priceElement.textContent = `Price: ₹${discountedPrice.toFixed(2)}`;
+        } else {
+          priceElement.textContent = `Price: ₹${originalPrice}`;
+        }
       }
-    }
-
-    function getCurrentPrice() {
-      const discountCheckbox = document.getElementById("discountCheckbox");
-      return discountCheckbox.checked ? originalPrice * 0.5 : originalPrice;
-    }
-
-    function addToCart(itemName, itemPrice) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push({ name: itemName, price: itemPrice });
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(itemName + " has been added to your cart at price ₹" + itemPrice + "!");
-    }
-  </script>
-</body>
-
+  
+      function getCurrentPrice() {
+        const discountCheckbox = document.getElementById("discountCheckbox");
+        return discountCheckbox.checked ? originalPrice * 0.5 : originalPrice;
+      }
+  
+      function addToCart(itemName, itemPrice) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name: itemName, price: itemPrice });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(itemName + " has been added to your cart at price ₹" + itemPrice + "!");
+      }
+    </script>
+  </body>
+  
 </html>

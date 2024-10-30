@@ -573,3 +573,115 @@ body {
 .cta-button:hover {
   background-color: #FFB347; /* Hover effect with lighter saffron */
 }
+
+
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-link {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+
+.cart-tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.cart-link:hover .cart-tooltip {
+  visibility: visible;
+}
+
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 30px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-link:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cart-icon .tooltip {
+  right: -10px;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 30px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-link:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cart-icon .tooltip {
+  right: -10px;
+}

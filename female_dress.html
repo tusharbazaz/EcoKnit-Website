@@ -146,27 +146,54 @@
     
     <div class="product-info">
       <h1>Female Dress</h1>
-      <p>Price: ₹1200</p>
+      <p id="price">Price: ₹1200</p>
       <p>Beautifully designed, this dress is made from organic hemp, offering comfort and sustainability.</p>
       <p class="bold">BEST SELLER</p>
       <p class="bold">75% off for Premium Buyers</p>
       <p>Limited Time Deal</p>
       <p class="bold">25% Reduction in Carbon emissions through sustainable fabric choices.</p>
-      <a href="#" class="cta-button" onclick="addToCart('Female Dress', 1200)">Add to Cart</a>
+
+      <!-- Discount Checkbox -->
+      <label>
+        <input type="checkbox" id="discountCheckbox" onclick="applyDiscount()">
+        Apply 75% Discount for Premium Buyers
+      </label>
+
+      <a href="#" class="cta-button" onclick="addToCart('Female Dress', getCurrentPrice())">Add to Cart</a>
     </div>
   </section>
 
   <footer>
     <p>© 2024 EcoKnit | Sustainable Fashion</p>
   </footer>
+
   <script>
+    let originalPrice = 1200;
+
+    function applyDiscount() {
+      const discountCheckbox = document.getElementById("discountCheckbox");
+      const priceElement = document.getElementById("price");
+      
+      if (discountCheckbox.checked) {
+        let discountedPrice = originalPrice * 0.25;
+        priceElement.textContent = `Price: ₹${discountedPrice.toFixed(2)}`;
+      } else {
+        priceElement.textContent = `Price: ₹${originalPrice}`;
+      }
+    }
+
+    function getCurrentPrice() {
+      const discountCheckbox = document.getElementById("discountCheckbox");
+      return discountCheckbox.checked ? originalPrice * 0.25 : originalPrice;
+    }
+
     function addToCart(itemName, itemPrice) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart.push({ name: itemName, price: itemPrice });
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(itemName + " has been added to your cart!");
+      alert(itemName + " has been added to your cart at price ₹" + itemPrice + "!");
     }
   </script>
-
 </body>
+
 </html>

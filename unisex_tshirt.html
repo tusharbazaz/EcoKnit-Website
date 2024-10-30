@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unisex T-Shirt - EcoKnit</title>
   <style>
+    /* Same styles as provided */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -100,7 +101,7 @@
       bottom: 0;
     }
 
-    /* Responsive design to ensure the layout adjusts well for mobile and tablets */
+    /* Responsive design */
     @media (max-width: 768px) {
       .product-detail {
         flex-direction: column;
@@ -145,11 +146,18 @@
     
     <div class="product-info">
       <h1>Unisex T-Shirt</h1>
-      <p>Price: ₹500</p>
+      <p id="price">Price: ₹500</p>
       <p>Made from recycled plastic bottles, this eco-friendly T-shirt is soft, comfortable, and sustainable.</p>
       <p class="bold" style="color: #FF9933;">25% off for Premium Buyers</p>
       <p class="bold" style="color: #FF9933;">25% Reduction in Carbon emissions through sustainable fabric choices.</p>
-      <a href="cart.html" class="cta-button" onclick="addToCart('Unisex T-Shirt', 500)">Add to Cart</a>
+
+      <!-- Discount Checkbox -->
+      <label>
+        <input type="checkbox" id="discountCheckbox" onclick="applyDiscount()">
+        Apply 25% Discount for Premium Buyers
+      </label>
+
+      <a href="cart.html" class="cta-button" onclick="addToCart('Unisex T-Shirt', getCurrentPrice())">Add to Cart</a>
     </div>
   </section>
 
@@ -158,11 +166,30 @@
   </footer>
 
   <script>
+    let originalPrice = 500;
+
+    function applyDiscount() {
+      const discountCheckbox = document.getElementById("discountCheckbox");
+      const priceElement = document.getElementById("price");
+      
+      if (discountCheckbox.checked) {
+        let discountedPrice = originalPrice * 0.75;
+        priceElement.textContent = `Price: ₹${discountedPrice.toFixed(2)}`;
+      } else {
+        priceElement.textContent = `Price: ₹${originalPrice}`;
+      }
+    }
+
+    function getCurrentPrice() {
+      const discountCheckbox = document.getElementById("discountCheckbox");
+      return discountCheckbox.checked ? originalPrice * 0.75 : originalPrice;
+    }
+
     function addToCart(itemName, itemPrice) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart.push({ name: itemName, price: itemPrice });
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(itemName + " has been added to your cart!");
+      alert(itemName + " has been added to your cart at price ₹" + itemPrice + "!");
     }
   </script>
 </body>

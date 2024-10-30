@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Male Shirt - EcoKnit</title>
+  <title>Male Top - EcoKnit</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -142,22 +142,22 @@
   </header>
 
   <section class="product-detail">
-    <img src="images/_2_male_shirt.png" alt="Male Shirt">
+    <img src="images/_6_male_top.jpg" alt="Male Top">
     
     <div class="product-info">
-      <h1>Male Shirt</h1>
-      <p id="price">Price: ₹700</p>
-      <p>A stylish shirt made from bamboo fibers, perfect for casual or office wear.</p>
-      <p class="bold">50% off for Premium Buyers</p>
-      <p class="bold">50% Reduction in Carbon emissions through sustainable fabric choices.</p>
+      <h1>Female Top</h1>
+      <p id="price">Price: ₹900</p>
+      <p>This trendy top made from bamboo fabric is stylish, breathable, and sustainable.</p>
+      <p class="bold">25% off for Premium Buyers</p>
+      <p class="bold">30% Reduction in Carbon emissions through sustainable fabric choices.</p>
 
       <!-- Discount Checkbox -->
       <label>
         <input type="checkbox" id="discountCheckbox" onclick="applyDiscount()">
-        Apply 50% Discount for Premium Buyers
+        Apply 25% Discount for Premium Buyers
       </label>
 
-      <a href="#" class="cta-button" onclick="addToCart('Male Shirt', getCurrentPrice())">Add to Cart</a>
+      <a href="#" class="cta-button" onclick="addToCart('Female Top', getCurrentPrice())">Add to Cart</a>
     </div>
   </section>
 
@@ -165,15 +165,16 @@
     <p>© 2024 EcoKnit | Sustainable Fashion</p>
   </footer>
 
+  <!-- JavaScript for discount and Add to Cart functionality -->
   <script>
-    let originalPrice = 700;
+    let originalPrice = 900;
 
     function applyDiscount() {
       const discountCheckbox = document.getElementById("discountCheckbox");
       const priceElement = document.getElementById("price");
       
       if (discountCheckbox.checked) {
-        let discountedPrice = originalPrice * 0.5;
+        let discountedPrice = originalPrice * 0.75;
         priceElement.textContent = `Price: ₹${discountedPrice.toFixed(2)}`;
       } else {
         priceElement.textContent = `Price: ₹${originalPrice}`;
@@ -182,7 +183,7 @@
 
     function getCurrentPrice() {
       const discountCheckbox = document.getElementById("discountCheckbox");
-      return discountCheckbox.checked ? originalPrice * 0.5 : originalPrice;
+      return discountCheckbox.checked ? originalPrice * 0.75 : originalPrice;
     }
 
     function addToCart(itemName, itemPrice) {

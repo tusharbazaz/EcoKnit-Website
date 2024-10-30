@@ -146,25 +146,52 @@
     
     <div class="product-info">
       <h1>Sustainable Dress</h1>
-      <p>Price: ₹1250</p>
-      <p>Reusable and made from recycled materials, this mask is a perfect eco-friendly choice.</p>
+      <p id="price">Price: ₹1250</p>
+      <p>Reusable and made from recycled materials, this Dress is a perfect eco-friendly choice.</p>
       <p class="bold">65% off for Premium Buyers</p>
       <p class="bold">55% Reduction in Carbon emissions through sustainable fabric choices.</p>
-      <a href="#" class="cta-button" onclick="addToCart('Sustainable Dress', 1250)">Add to Cart</a>
+
+      <!-- Discount Checkbox -->
+      <label>
+        <input type="checkbox" id="discountCheckbox" onclick="applyDiscount()">
+        Apply 65% Discount for Premium Buyers
+      </label>
+
+      <a href="#" class="cta-button" onclick="addToCart('Sustainable Dress', getCurrentPrice())">Add to Cart</a>
     </div>
   </section>
 
   <footer>
     <p>© 2024 EcoKnit | Sustainable Fashion</p>
   </footer>
+
   <script>
+    let originalPrice = 1250;
+
+    function applyDiscount() {
+      const discountCheckbox = document.getElementById("discountCheckbox");
+      const priceElement = document.getElementById("price");
+      
+      if (discountCheckbox.checked) {
+        let discountedPrice = originalPrice * 0.35;
+        priceElement.textContent = `Price: ₹${discountedPrice.toFixed(2)}`;
+      } else {
+        priceElement.textContent = `Price: ₹${originalPrice}`;
+      }
+    }
+
+    function getCurrentPrice() {
+      const discountCheckbox = document.getElementById("discountCheckbox");
+      return discountCheckbox.checked ? originalPrice * 0.35 : originalPrice;
+    }
+
     function addToCart(itemName, itemPrice) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart.push({ name: itemName, price: itemPrice });
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(itemName + " has been added to your cart!");
+      alert(itemName + " has been added to your cart at price ₹" + itemPrice + "!");
     }
   </script>
-
 </body>
+
 </html>
