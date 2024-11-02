@@ -130,6 +130,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -157,6 +158,15 @@
         Apply 25% Discount for Premium Buyers
       </label>
 
+      <!-- Size Selection Buttons -->
+      <div class="size-selection">
+        <p>Select Size:</p>
+        <button class="size-button" onclick="selectSize('S')">S</button>
+        <button class="size-button" onclick="selectSize('M')">M</button>
+        <button class="size-button" onclick="selectSize('L')">L</button>
+        <button class="size-button" onclick="selectSize('XL')">XL</button>
+      </div>
+
       <a href="#" class="cta-button" onclick="addToCart('Female Top', getCurrentPrice())">Add to Cart</a>
     </div>
   </section>
@@ -165,7 +175,6 @@
     <p>© 2024 EcoKnit | Sustainable Fashion</p>
   </footer>
 
-  <!-- JavaScript for discount and Add to Cart functionality -->
   <script>
     let originalPrice = 900;
 
@@ -192,7 +201,37 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       alert(itemName + " has been added to your cart at price ₹" + itemPrice + "!");
     }
-  </script>
-</body>
 
-</html>
+    function selectSize(size) {
+      alert("Size " + size + " selected!");
+    }
+  </script>
+
+  <style>
+    /* Styles for size selection */
+    .size-selection {
+      margin-top: 10px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .size-selection p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .size-button {
+      background-color: #FF9933;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .size-button:hover {
+      background-color: #FFB347;
+    }
+  </style>
+</body>
