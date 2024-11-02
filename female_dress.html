@@ -149,7 +149,7 @@
       <p id="price">Price: ₹1200</p>
       <p>Beautifully designed, this dress is made from organic hemp, offering comfort and sustainability.</p>
       <p class="bold">BEST SELLER</p>
-      <p class="bold">75% off for Premium Buyers</p>
+      <p class="bold">65% off for Premium Buyers</p>
       <p>Limited Time Deal</p>
       <p class="bold">25% Reduction in Carbon emissions through sustainable fabric choices.</p>
 
@@ -175,7 +175,7 @@
       const priceElement = document.getElementById("price");
       
       if (discountCheckbox.checked) {
-        let discountedPrice = originalPrice * 0.25;
+        let discountedPrice = originalPrice * 0.35;
         priceElement.textContent = `Price: ₹${discountedPrice.toFixed(2)}`;
       } else {
         priceElement.textContent = `Price: ₹${originalPrice}`;
@@ -184,7 +184,7 @@
 
     function getCurrentPrice() {
       const discountCheckbox = document.getElementById("discountCheckbox");
-      return discountCheckbox.checked ? originalPrice * 0.25 : originalPrice;
+      return discountCheckbox.checked ? originalPrice * 0.35 : originalPrice;
     }
 
     function addToCart(itemName, itemPrice) {
